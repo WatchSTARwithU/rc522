@@ -70,9 +70,9 @@ void setup() {
   rfid.PCD_Init();
   rfid.PCD_DumpVersionToSerial();
   ledcAttachPin(4, TONE_PWM_CHANNEL);
-  lcd.begin(16, 2);          // 設定LCD字幕為 16*2
-  lcd.home();             // 將游標移至左上角
-  lcd.print("identifying.....");  // 顯示字串
+  lcd.begin(16, 2);          
+  lcd.home();            
+  lcd.print("identifying....."); 
 }
 
 void loop() {
@@ -103,7 +103,7 @@ void loop() {
         analogWrite(12, 0);
         analogWrite(14, 0);
         lcd.setCursor(0,1);
-        lcd.print(rxload);         // 移動游標至第0行第1列
+        lcd.print(rxload);        
         lcd.print(" fail     ");
         delay(500);
       }
@@ -145,7 +145,7 @@ void printDec(byte *buffer, byte bufferSize) {
     analogWrite(12, 255);
     analogWrite(14, 0);
     lcd.setCursor(0,1); 
-    lcd.print(buffer[i]);// 移動游標至第0行第1列
+    lcd.print(buffer[i]);
     lcd.print(" pass");
     delay(500);
   }
@@ -158,7 +158,7 @@ void printDec(byte *buffer, byte bufferSize) {
     analogWrite(12, 0);
     analogWrite(14, 0);
     lcd.setCursor(0,1); 
-    lcd.print(buffer[i]);// 移動游標至第0行第1列
+    lcd.print(buffer[i]);
     lcd.print(" fail");
     delay(500);
   }
